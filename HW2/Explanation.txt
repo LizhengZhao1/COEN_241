@@ -1,0 +1,19 @@
+ Explanation1: screenshot of invoking the figlet function 
+  Just run the following command line on QEMU terminal. 
+  $ echo “Hello, Faas, world” | faas-cli invoke figlet 
+  This function will convert the input string to a amazing sign
+
+ Explanation2: screenshot of running the following command :sudo journalctl -u faasd --lines 40
+  Just run the following command line on QEMU terminal. 
+  $ sudo journalctl -u faasd --lines 40
+  After executing the above command line, we can get some log records of fassd 
+
+ Explanation3: screenshot of your OpenFaaS gateway AFTER deploying figlet, slack-handler and slack interactive functions
+ this screenshot is the UI of OpenFaas gateway. It shows some functions we have deployed to OpenFaas.
+
+ Explanation4: screenshot of invoking slack-request and slack-interactive functions
+ Just run the following command line on QEMU terminal. 
+ $ echo "https://www/youtube.com/" | faas-cli invoke slack-interactive 
+ Or
+ $ echo "https://www/youtube.com/" | faas-cli invoke slack-request 
+ After executing the above command line, we will get a output of JSON object.

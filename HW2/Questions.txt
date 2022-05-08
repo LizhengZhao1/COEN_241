@@ -1,0 +1,34 @@
+1. What is the command to invoke the slack-request function (4 pts)?
+
+a. Via Curl
+curl localhost:8080/function/slack-request -d <Input>
+
+b. Via faas-cli
+echo <Input> | faas-cli invoke slack-request
+
+2. What is the output you see when you invoke the slack-request function? (2 pts)
+Data of JSON format:
+
+{"text": "Serverless Message", "attachments": [{"fields": [{"short": true, "value": "100", "title": "Amazing Level"}], "author_icon": "", "image_url": "https://avatars.githubusercontent.com/u/81804157?v=4", "author_name": "Lizheng Zhao", "title": "The Awesome world of Cloud Computing! COEN 241"}, {"text": "COEN 241 is the most awesome class ever!.", "title": "About COEN 241"}, {"title": "Would you recommend COEN 241 to your friends?", "color": "#3AA3E3", "actions": [{"text": "Of Course!", "type": "button", "name": "recommend", "value": "recommend"}, {"text": "Most Definitely!", "type": "button", "name": "definitely", "value": "definitely"}], "callback_id": "response123", "fallback": "Would you recommend COEN 241 to your friends?", "attachment_type": "default"}]}
+
+3. What is the command to invoke the slack-interactive function? (4 pts)
+
+a. Via curl
+curl localhost:8080/function/slack-interactive -d <Input>
+
+b. Via faas-cli
+echo <Input> | faas-cli invoke slack-interactive
+
+4. What is the output you see when you invoke the slack-interactive function? (2 pts)
+The input of URL and data of JSON format: 
+For example:
+
+{"attachments": [{"footer": "Slack Apps built on OpenFaas", "author_link": "https://github.com/LizhengZhao1/COEN_241.git", "color": "#36a64f", "text": "Head over to COEN 241", "title": "COEN 241", "ts": 123456789, "author_name": "Lizheng Zhao", "title_link": "https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/graduate/course-descriptions/", "image_url": "https://www.scu.edu/media/offices/umc/scu-brand-guidelines/visual-identity-amp-photography/visual-identity-toolkit/logos-amp-seals/Mission-Dont3.png", "response_type": "ephemeral", "replace_original": true, "footer_icon": "https://a.slack-edge.com/45901/marketing/img/_rebrand/meta/slack_hash_256.png", "pretext": "Ahh yeah! Great choice, COEN 241 is absolutely amazing!", "fallback": "Required plain-text summary of the attachment.", "thumb_url": "https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/graduate/course-descriptions/", "author_icon": "https://avatars.githubusercontent.com/u/81804157?v=4"}]}
+
+5. How would you pass different arguments to the functions? (4 pts)
+Using command line: echo <arguments>
+Then we could pass different arguments to the functions
+
+6. How would you change the slack-interactive function to react to different inputs? (4 pts)
+
+If we want to change our slack-interactive function to react to different inputs, we need to change some code in slack-interactive function file. Then we need to rebuild, repost and redeploy by slack-interactive.yml file
